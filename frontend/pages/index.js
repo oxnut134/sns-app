@@ -39,6 +39,13 @@ const Home = () => {
     formState: { errors },
   } = useForm();
 
+  //------------------------------------------------------
+  const showStorage = () => {
+    const storedMessagesJSON = localStorage.getItem("storedComments");
+    const storedMessages = JSON.parse(storedMessagesJSON);
+    console.log(" your storage in index:", storedMessages);
+  };
+
   //-------------------------------------------------
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -135,6 +142,7 @@ const Home = () => {
       console.error("エラーが発生しました:", error);
       return;
     } finally {
+      showStorage();
       setIsLoading(false);
       setShowWarning(false);
       return;
@@ -161,7 +169,7 @@ const Home = () => {
     if (isLoading) {
       return;
     }
-    
+
     const { inputValue } = data;
     if (!inputValue) {
       return;

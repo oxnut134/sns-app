@@ -93,6 +93,7 @@ export default function Comment(props) {
     const storedMessages = JSON.parse(storedMessagesJSON);
     console.log("stored to your storage:", storedMessages);
   };
+  useEffect(() => { showStorage(); }, []);
 
   //-------------------------------------------
   const post_id = null;
@@ -182,8 +183,7 @@ export default function Comment(props) {
         id: item.id,
         uid: item.uid,
         returnPostId: item.id,
-        commentUserName:
-          users.find((user) => user.uid === item.user_id)?.name || null,
+        commentUserName:item.commentUserName
       }));
 
       const reversedComments = comments.reverse();
@@ -194,6 +194,7 @@ export default function Comment(props) {
 
     getComments();
   }, []);
+
 
   //-------------------------------------------
   const handleSubmitComment = async (data) => {
