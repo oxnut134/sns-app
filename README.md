@@ -90,16 +90,6 @@ composer install
 　**APP_KEY作成**
 　　`php artisan key:generate` 
 
-　**Laravel起動確認**
-　　ブラウザで `http://localhost` にアクセス
-
-　**エラー発生時の対応**
-
-```jsx
-　　****chmod -R 775 storage
-　　chown -R www-data storage
-```
-
 ### ３－２）データベース
 
 　**MySQLコンテナログイン**
