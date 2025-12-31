@@ -1,5 +1,3 @@
-# README
-
 # README.md
 
 # Twitter風SNSアプリ
@@ -63,7 +61,7 @@ git clone git@github.com:oxnut134/sns-app.git
 
 ## ７)ＥＲ図
 
-![sns-app.png](sns-app.png)
+[sns-app.png](sns-app.png)
 
 ## ８）環境構築
 
