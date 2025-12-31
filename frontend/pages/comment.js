@@ -178,12 +178,13 @@ export default function Comment(props) {
         (item) => item.post_id == id
       );
       const users = usersArray;
+      console.error("users in getComments:", users);
       const comments = commentsFiltered.map((item) => ({
         inputValue: item.comment,
         id: item.id,
         uid: item.uid,
         returnPostId: item.id,
-        commentUserName:item.commentUserName
+        commentUserName:users.find((user) => user.uid === item.user_id)?.name || null,
       }));
 
       const reversedComments = comments.reverse();
@@ -216,6 +217,7 @@ export default function Comment(props) {
     const newComment = {
       inputValue: inputValue,
       id: maxId + 1,
+      user_id: auth.currentUser.uid,
       commentUserName: auth.currentUser?.displayName,
     };
     setComments((prev) => [newComment, ...prev]);
