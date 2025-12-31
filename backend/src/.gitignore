@@ -13,3 +13,6 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+# MySQLのデータを除外
+backend/docker/mysql/data/*
+!backend/docker/mysql/data/.gitkeep
