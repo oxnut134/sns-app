@@ -1,0 +1,6 @@
+backend/docker/mysql/data/
+
+node_modules/
+
+.env
+
